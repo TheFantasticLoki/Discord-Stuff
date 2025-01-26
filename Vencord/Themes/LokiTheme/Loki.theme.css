@@ -1,0 +1,276 @@
+/* Add your own Custom CSS here.
+Have a theme you want to use? Copy and paste the contents here.
+You need to restart (click the restart button) after changing. */
+
+//META{"name":"Dusk to Dawn","description":"Simple theme that changes discord's default appearance in subtle ways.","author":"Asteria","version":"1.5","website":"https://discord.gg/QRxZPvc"}*//{}
+
+/* Imports */
+@import url('https://asteria5675.github.io/BetterDiscordThemes/SourceCodes/src/dd.css');
+@import url('https://mr-miner1.github.io/Better-Badges/src/badges.css');
+@import url(https://hellbound1337.github.io/modern-indicators/src/source.css);
+@import url("https://discordstyles.github.io/RadialStatus/dist/RadialStatus.css");
+/*Supported Providers:
+		→ Apple
+		→ Facebook
+		→ Google
+		→ JoyPixels
+		→ Microsoft
+		→ OpenMoji
+		→ Samsung
+		→ Toss
+		→ WhatsApp*/
+@import url(https://mwittrien.github.io/BetterDiscordAddons/Themes/EmojiReplace/base/Google.css);
+@import "https://nyri4.github.io/Discolored/main.css";
+@import url('https://nyri4.github.io/donators/donators.css');
+/* zFloat Imports*/
+/* Addons */
+@import url(https://maendisease.github.io/BetterDiscordStuff/css/bdAddonMini.css);
+
+/* Warning to Remove Minimum Size */
+@import url(https://maendisease.github.io/BetterDiscordStuff/Themes/Float/addon/RemoveMinimumSize.css) (width: 940px);
+
+/* Source */
+@import url(https://maendisease.github.io/BetterDiscordStuff/Themes/Float/Float.css) (max-width: 940px);
+
+/* If your theme has custom settings icons, delete or comment this line */
+@import url(https://maendisease.github.io/BetterDiscordStuff/Themes/Float/addon/SettingsIcons.css) (max-width: 940px);
+/* Variables */
+:root {
+    --button-radius: 0px; /* Discord Default - 3px | Theme's Default - 0px */
+    --channel-radius: 6px; /* Discord Default - 3px | Theme's Default - 6px */
+    /* Dark Mode */
+    --dm-channel-color: hsla(240, 1%, 29%, 0.5); /* Channel Selected/Hoverd background color | Theme's Default - hsla(240, 1%, 29%, 0.5) */
+    --dm-chat-bg: #1a1a1a; /* Chat's background color | Theme's Default - #1a1a1a */
+    /* Light Mode */
+    --lm-channel-color: rgba(14, 13, 13, 0.8); /* Channel Selected/Hoverd background color | Theme's Default - hsla(240, 1%, 29%, 0.5) */
+    --lm-chat-bg: #f7f7ff; /* Chat's background color | Theme's Default - #f7f7ff */
+    /* Better Badges /**/
+    --badge-size: 22px; /*discord defualt = 18px, theme defualt = 22px;*/
+    --badge-margin: 1.5px; /*discord default = 2px, theme defualt = 1.5px*/
+    --badges-everywhere-size: 15px; /*default = 15px*/
+    --unread-badge: rgba(255,255,255,0.6) !important;
+    --unread-background: rgba(255, 255, 255, 0.008) !important;
+    --selected-badge: rgb(112, 135, 215) !important;
+    --selected-background: rgba(112, 135, 215, 0.1) !important;
+    --hovered: rgba(79,84,92,0.16) !important;
+    --active: rgba(79,84,92,0.24) !important;
+    /* Radial Status */
+    --rs-small-spacing: 2px; /* Gap between avatar and status for members list/dms | MUST end in px */
+    --rs-medium-spacing: 3px; /* Gap between avatar and status for User popout | MUST end in px */
+    --rs-large-spacing: 4px; /* Gap between avatar and status for User profiles | MUST end in px */
+
+    --rs-small-width: 2px; /* Thickness of status border for members list/dms | MUST end in px */
+    --rs-medium-width: 3px; /* Thickness of status border for User popout | MUST end in px */
+    --rs-large-width: 4px; /* Thickness of status border for User profile | MUST end in px */
+
+    --rs-avatar-shape: 50%; /* 50% for round - 0% for square */
+
+    --rs-online-color: #43b581; /* Colour for online status */
+    --rs-idle-color: #faa61a; /* Colour for idle status */
+    --rs-dnd-color: #f04747; /* Colour for dnd status */
+    --rs-offline-color: #636b75; /* Colour for offline status */
+    --rs-streaming-color: #643da7; /* Colour for streaming status */
+    --rs-invisible-color: #747f8d; /* Colour for invisible status - Note: this will only show for your own invisibility */
+    --rs-phone-color: var(--rs-online-color); /* Colour of the ring and phone icon when a user is on their phone |  */
+
+    --rs-phone-visible: block; /* Visibility of the phone icon next to a users avatar. | block = visible | none = hidden */
+    /* zFloat*/
+    /* Guildlist */
+    --guildicon-size: 48;
+    --enable-if-using-favorites-experiment: 0; /* boolean */
+    --guildlist-collapse: 0; /* boolean */
+
+    /* Channel sidebar */
+    --slide-window-on-hover: 1; /* boolean */
+    --float-sidebar-width: 48;
+    --sidebar-hover-width: 240px;
+    --sidebar-hover-delay: 0.2s;
+    --sidebar-transition-duration: 0.4s;
+    --sidebar-window-gap: 8px;
+    --sidebar-border-radius: 8px;
+    --sidebar-usersettings-width: 66px;
+
+    /* Memberlist */
+    --float-members-width: 65px;
+    --members-hover-width: 240px;
+    --members-hover-delay: 1.5s;
+    --members-transition-duration: 0.4s;
+
+    /* Channelheader */
+    --topic-opacity: 1;
+    --toolbar-visibility: flex; /* [flex][none] */
+
+    /* Textarea buttons */ /* [flex][none] */
+    --textarea-buttons-gif: flex;
+    --textarea-buttons-sticker: flex;
+    --textarea-buttons-gift: none;
+
+    /* Theme compatibility */
+    /* --float-guildlist-width-correction: 0px; */
+}
+
+/* Highlight Selection */
+/* -delete this css below if you do not want a different highlight than default blue and white text*/
+.theme-dark ::selection {
+    background-color: #f0e8e8;
+    color: #1e1e1e;
+}
+.theme-light ::selection {
+    background-color: #201f1f;
+    color: #efebeb;
+}
+
+/* zFloat*/
+
+/* The variables are used when the window is at the set sizes, each media query can be edited/deleted */
+@media (max-width:700px) {
+    :root {
+        --topic-opacity: 0;
+        --toolbar-visibility: none;
+        --textarea-buttons-gif: none;
+        --textarea-buttons-sticker: none;
+    }
+}
+
+@media (max-width:500px) {
+    :root {
+        --guildicon-size: 40;
+        --float-members-width: 0;
+    }
+}
+
+@media (max-width:400px) {
+    :root {
+        --float-sidebar-width: 0;
+    }
+}
+
+@media (max-width:300px) {
+    :root {
+        --guildlist-collapse: 1;
+    }
+}
+
+[id^="message-accessories-"] {
+    display: flex;
+    column-gap: 2rem;
+    flex-wrap: wrap;
+}
+[id^="message-accessories-"] > [role="group"] {
+    flex-basis: 100%;
+}
+.form-3gdLxP {
+  padding: 0px;
+}
+
+.channelTextArea-1VQBuV {
+  margin-bottom: 0px;
+}
+
+/* Make the height consistent */
+.inner-NQg18Y {
+  padding-top: 4px;
+  min-height: 49px;
+}
+
+/* Move the slowmode/typing indicator */
+.base-3bcbY3 {
+  top: -24px;
+  left: 0px;
+  width: fit-content;
+  padding-right: 9px;
+  border-radius: 0 8px 0 0;
+  background-color: var(--channeltextarea-background);
+}
+
+.scrollableContainer-15eg7h {
+  border-radius: 0px;
+  min-height: 53px;
+}
+
+/*
+The below influences the settings button, optional but makes the line consistent
+across the entire client
+*/
+/* Move settings (3rd, hence :nth-child(3)) button 
+.container-YkUktl:last-of-type>.flex-2S1XBF.flex-3BkGQD :nth-child(3) {
+    position: fixed;
+    bottom: 10px;
+    left: 20px;
+}
+*/
+/* Decrease height of server list to make room for settings button 
+.guilds-2JjMmN {
+    margin-bottom: 53px;
+}
+*/
+/* Make the background distinct 
+.container-1eFtFS {
+  background: var(--background-secondary);
+}*/
+[class^="channelTextArea"]::before {
+    content: "";
+    width: 32px;
+    height: 32px;
+    bottom: calc(100% - 3px); /* Mess with the - 3px to change its vertical position */
+    right: 10px; /* Switch this from right to left to put it on the left side, or increase/decrease to change its position */
+    position: absolute;
+    image-rendering: pixelated;
+    background-image: url("https://raw.githubusercontent.com/adryd325/oneko.js/14bab15a755d0e35cd4ae19c931d96d306f99f42/oneko.gif");
+    animation: sleep 1s infinite; /* change 1s to make the animation slower/faster */
+}
+[class^="channelTextArea"]:hover::before {
+    animation: 2.5s 1 forwards wakeup; /* change 1s to make the animation slower/faster */
+}
+@keyframes sleep {
+    /*
+    if you open the background image in ur browser, you will see that it has way more frames
+    so if you want, you could make ur own keyframes for a different animation
+    the top left frame is 0 0, second top row is -32 0, second row second is -32 -32 and so on
+    the ...00001% makes it so that there's no transition between the frames, so if you wanted say 3 frames, you'd do 0%, 33.3%; 33.30001%, 66.6%; 66.60001%, 100%
+    */
+    0%, 50% {
+        background-position: -64px 0;
+    }
+    50.00001%, 100% {
+        background-position: -64px -32px;
+    }
+}
+@keyframes wakeup {
+    0%, 20% {
+        background-position: -160px 0;
+    }
+    20.00001%, 40% {
+        background-position: -192px 0;
+    }
+    40.00001%, 60% {
+        background-position: -224px 0;
+    }
+    60.00001%, 80% {
+        background-position: -96px -64px;
+    }
+    80.00001%, 100% {
+        background-position: -96px -96px;
+    }
+}
+textarea[placeholder*="Review @"] {
+    background-color: #00000040;
+}
+@font-face {
+  font-family: "Helvetica";
+  src: url("https://fonts.gstatic.com/s/notosansjp/v42/-F6pfjtqLzI2JPCgQBnw7HFQaioa3Xdg.woff2") format('woff2');
+  unicode-range: U+4E00–U+9FBF,U+3040–U+309F,U+30A0–U+30FF;
+}
+.vc-spotify-button-row {
+  height: 0;
+  opacity: 0;
+  transition: height .2s, opacity .02s;
+}
+
+#vc-spotify-player:hover .vc-spotify-button-row {
+  height: 32px;
+  opacity: 1;
+}
+.shiki-root {
+    background: var(--background-secondary) !important;
+}
